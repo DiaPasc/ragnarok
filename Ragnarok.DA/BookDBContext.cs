@@ -6,13 +6,13 @@ using System.Web;
 
 namespace Ragnarok.DA
 {
-    public class SampleDBContext : DbContext
+    public class BookDBContext : DbContext
     {
-        public SampleDBContext(string connectionString) : base(connectionString)
+        public BookDBContext(string connectionString) : base(connectionString)
         {
         }
 
-        public SampleDBContext() : base("BookContext")
+        public BookDBContext() : base("BookContext")
         {
         }
         
