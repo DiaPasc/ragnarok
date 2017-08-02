@@ -12,6 +12,6 @@ namespace Ragnarok.DA.Book.Entity
 
         public int Year { get; set; }
 
-        public string Descriprion { get; set; }
+        public string Description { get; set; }
     }
 }
