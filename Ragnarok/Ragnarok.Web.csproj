@@ -210,7 +210,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
-    <Compile Include="Controllers\Api\SampleController.cs" />
+    <Compile Include="Controllers\Api\BookController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -280,6 +280,9 @@
   <ItemGroup>
     <TypeScriptCompile Include="app\app.component.ts" />
     <TypeScriptCompile Include="app\app.module.ts" />
+    <TypeScriptCompile Include="app\book\book.component.ts" />
+    <TypeScriptCompile Include="app\book\book.service.ts" />
+    <TypeScriptCompile Include="app\book\book.ts" />
     <TypeScriptCompile Include="app\dashboard\dashboard.component.ts" />
     <TypeScriptCompile Include="app\dashboard\dashboard.service.ts" />
     <TypeScriptCompile Include="app\main.ts" />
