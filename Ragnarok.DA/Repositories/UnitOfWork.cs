@@ -1,22 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Ragnarok.DA.Repositories
+﻿namespace Ragnarok.DA.Repositories
 {
     public class UnitOfWork : IUnitOfWork
     {
+        private readonly BookDBContext dbContext;
 
         private IBookRepository bookRepository;
-        private BookDBContext dbContext;
 
         public UnitOfWork(BookDBContext dbContext)
         {
             this.dbContext = dbContext;
         }
-
 
         public IBookRepository BookRepository
         {
