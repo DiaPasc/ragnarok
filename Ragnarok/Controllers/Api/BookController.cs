@@ -1,6 +1,7 @@
 ﻿using Ragnarok.DA;
 using Ragnarok.DA.Repositories;
 using Ragnarok.Models;
+using System;
 using System.Linq;
 using System.Web.Http;
 
@@ -30,6 +31,22 @@ namespace Ragnarok.Controllers.Api
             }).ToArray();
 
             return books;
+        }
+
+        [HttpGet]
+        public IHttpActionResult GetBook(Guid id)
+        {
+            Ragnarok.DA.Book.Entity.Book book = unitOfWork.BookRepository.List().FirstOrDefault(a => a.Id == id);
+
+            if (book != null)
+                return Ok(new Book
+                {
+                    Title = book.Title,
+                    Author = book.Author,
+                    Year = book.Year,
+                    Description = book.Description
+                });
+            return Ok();
         }
     }
 }
