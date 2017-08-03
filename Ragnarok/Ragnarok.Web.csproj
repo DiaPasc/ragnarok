@@ -225,8 +225,8 @@
   <ItemGroup>
     <Content Include="app\app.component.css" />
     <Content Include="app\app.component.html" />
-    <Content Include="app\dashboard\dashboard.component.css" />
-    <Content Include="app\dashboard\dashboard.component.html" />
+    <Content Include="app\book\book.component.css" />
+    <Content Include="app\book\book.component.html" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="favicon.ico" />
@@ -280,11 +280,10 @@
   <ItemGroup>
     <TypeScriptCompile Include="app\app.component.ts" />
     <TypeScriptCompile Include="app\app.module.ts" />
+    <TypeScriptCompile Include="app\app.routing.ts" />
     <TypeScriptCompile Include="app\book\book.component.ts" />
     <TypeScriptCompile Include="app\book\book.service.ts" />
     <TypeScriptCompile Include="app\book\book.ts" />
-    <TypeScriptCompile Include="app\dashboard\dashboard.component.ts" />
-    <TypeScriptCompile Include="app\dashboard\dashboard.service.ts" />
     <TypeScriptCompile Include="app\main.ts" />
   </ItemGroup>
   <ItemGroup>

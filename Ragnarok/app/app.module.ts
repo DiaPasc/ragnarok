@@ -1,27 +1,28 @@
 ﻿import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpModule } from '@angular/http';
-import { FormsModule } from '@angular/forms';
+import { Routing } from './app.routing';
 import { MaterialModule } from '@angular/material';
 
 //Components
 import { AppComponent } from './app.component';
-import { DashboardComponent } from './dashboard/dashboard.component';
+import { BookComponent } from './book/book.component';
 
 //Services
-import { DashboardService } from './dashboard/dashboard.service';
+import { BookService } from './book/book.service';
 
 @NgModule({
     imports: [
         BrowserModule,
         HttpModule,
-        FormsModule
+        Routing,
+        MaterialModule.forRoot(),
     ],
     declarations: [
         AppComponent,
-        DashboardComponent
+        BookComponent
     ],
-    providers: [DashboardService],
+    providers: [BookService],
     bootstrap: [AppComponent]
 })
 export class AppModule { }

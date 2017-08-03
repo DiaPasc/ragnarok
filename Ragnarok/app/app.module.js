@@ -9,12 +9,13 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var platform_browser_1 = require("@angular/platform-browser");
 var http_1 = require("@angular/http");
-var forms_1 = require("@angular/forms");
+var app_routing_1 = require("./app.routing");
+var material_1 = require("@angular/material");
 //Components
 var app_component_1 = require("./app.component");
-var dashboard_component_1 = require("./dashboard/dashboard.component");
+var book_component_1 = require("./book/book.component");
 //Services
-var dashboard_service_1 = require("./dashboard/dashboard.service");
+var book_service_1 = require("./book/book.service");
 var AppModule = (function () {
     function AppModule() {
     }
@@ -25,13 +26,14 @@ AppModule = __decorate([
         imports: [
             platform_browser_1.BrowserModule,
             http_1.HttpModule,
-            forms_1.FormsModule
+            app_routing_1.Routing,
+            material_1.MaterialModule.forRoot(),
         ],
         declarations: [
             app_component_1.AppComponent,
-            dashboard_component_1.DashboardComponent
+            book_component_1.BookComponent
         ],
-        providers: [dashboard_service_1.DashboardService],
+        providers: [book_service_1.BookService],
         bootstrap: [app_component_1.AppComponent]
     })
 ], AppModule);
