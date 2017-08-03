@@ -1,4 +1,5 @@
-﻿using System.Data.Entity;
+﻿using System;
+using System.Data.Entity;
 using System.Linq;
 
 namespace Ragnarok.DA.Repositories
@@ -12,6 +13,11 @@ namespace Ragnarok.DA.Repositories
         public Book.Entity.Book[] List()
         {
             return dbSet.ToArray();
+        }
+
+        public Book.Entity.Book GetById(Guid id)
+        {
+            return dbSet.FirstOrDefault(x => x.Id == id);
         }
     }
 }
