@@ -14,6 +14,14 @@ export class BookService {
             .map(this.extractData)
             .catch(this.handleError);
     }
+
+    getBook(id: string): Observable<Book> {
+        let params = new URLSearchParams();
+        params.set('id', id);
+        return this.http.get(`${this.url}/GetBook`, { search: params })
+            .map(this.extractData)
+            .catch(this.extractData);
+    } 
     
     extractData(res: Response) {
         return res.json() || [];
