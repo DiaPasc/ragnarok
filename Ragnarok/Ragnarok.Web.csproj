@@ -225,6 +225,8 @@
   <ItemGroup>
     <Content Include="app\app.component.css" />
     <Content Include="app\app.component.html" />
+    <Content Include="app\book\book-detail\book-detail.component.css" />
+    <Content Include="app\book\book-detail\book-detail.component.html" />
     <Content Include="app\book\book.component.css" />
     <Content Include="app\book\book.component.html" />
     <Content Include="Content\bootstrap.css" />
@@ -281,6 +283,7 @@
     <TypeScriptCompile Include="app\app.component.ts" />
     <TypeScriptCompile Include="app\app.module.ts" />
     <TypeScriptCompile Include="app\app.routing.ts" />
+    <TypeScriptCompile Include="app\book\book-detail\book-detail.component.ts" />
     <TypeScriptCompile Include="app\book\book.component.ts" />
     <TypeScriptCompile Include="app\book\book.service.ts" />
     <TypeScriptCompile Include="app\book\book.ts" />

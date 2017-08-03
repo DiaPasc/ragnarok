@@ -14,6 +14,7 @@ var material_1 = require("@angular/material");
 //Components
 var app_component_1 = require("./app.component");
 var book_component_1 = require("./book/book.component");
+var book_detail_component_1 = require("./book/book-detail/book-detail.component");
 //Services
 var book_service_1 = require("./book/book.service");
 var AppModule = (function () {
@@ -31,7 +32,8 @@ AppModule = __decorate([
         ],
         declarations: [
             app_component_1.AppComponent,
-            book_component_1.BookComponent
+            book_component_1.BookComponent,
+            book_detail_component_1.BookDetailComponent
         ],
         providers: [book_service_1.BookService],
         bootstrap: [app_component_1.AppComponent]

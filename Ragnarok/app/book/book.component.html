@@ -12,6 +12,9 @@
             <td>{{book.Author}}</td>
             <td>{{book.Year}}</td>
             <td>{{book.Description}}</td>
+            <td>
+                <a [routerLink]="['/detail', book.Id]">Detail</a>
+            </td>
         </tr>
     </table>
 </div>

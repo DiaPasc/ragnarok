@@ -7,6 +7,7 @@ import { MaterialModule } from '@angular/material';
 //Components
 import { AppComponent } from './app.component';
 import { BookComponent } from './book/book.component';
+import { BookDetailComponent } from './book/book-detail/book-detail.component';
 
 //Services
 import { BookService } from './book/book.service';
@@ -20,7 +21,8 @@ import { BookService } from './book/book.service';
     ],
     declarations: [
         AppComponent,
-        BookComponent
+        BookComponent,
+        BookDetailComponent
     ],
     providers: [BookService],
     bootstrap: [AppComponent]
