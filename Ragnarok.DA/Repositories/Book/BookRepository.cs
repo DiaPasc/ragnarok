@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Data.Entity;
 using System.Linq;
+using Ragnarok.DA.Book.Entity;
+using System.Data.Entity.Infrastructure;
 
 namespace Ragnarok.DA.Repositories
 {
@@ -18,6 +20,15 @@ namespace Ragnarok.DA.Repositories
         public Book.Entity.Book GetById(Guid id)
         {
             return dbSet.FirstOrDefault(x => x.Id == id);
+        }
+
+        public void Update(Book.Entity.Book book)
+        {
+            Book.Entity.Book dbBook = dbSet.Find(book.Id);
+
+            dbBook.Title = book.Title;
+            dbBook.Author = book.Author;
+            // ..
         }
     }
 }

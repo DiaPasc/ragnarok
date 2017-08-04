@@ -11,10 +11,12 @@ var platform_browser_1 = require("@angular/platform-browser");
 var http_1 = require("@angular/http");
 var app_routing_1 = require("./app.routing");
 var material_1 = require("@angular/material");
+var forms_1 = require("@angular/forms");
 //Components
 var app_component_1 = require("./app.component");
 var book_component_1 = require("./book/book.component");
 var book_detail_component_1 = require("./book/book-detail/book-detail.component");
+var book_edit_component_1 = require("./book/book-edit/book-edit.component");
 //Services
 var book_service_1 = require("./book/book.service");
 var AppModule = (function () {
@@ -29,11 +31,13 @@ AppModule = __decorate([
             http_1.HttpModule,
             app_routing_1.Routing,
             material_1.MaterialModule.forRoot(),
+            forms_1.FormsModule
         ],
         declarations: [
             app_component_1.AppComponent,
             book_component_1.BookComponent,
-            book_detail_component_1.BookDetailComponent
+            book_detail_component_1.BookDetailComponent,
+            book_edit_component_1.BookEditComponent
         ],
         providers: [book_service_1.BookService],
         bootstrap: [app_component_1.AppComponent]

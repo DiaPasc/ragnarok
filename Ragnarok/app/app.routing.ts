@@ -4,6 +4,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { Book } from './book/book';
 import { BookComponent } from './book/book.component';
 import { BookDetailComponent } from './book/book-detail/book-detail.component';
+import { BookEditComponent } from './book/book-edit/book-edit.component';
 
 const routes: Routes = [
     {
@@ -18,6 +19,10 @@ const routes: Routes = [
     {
         path: 'detail/:id',
         component: BookDetailComponent,
+    },
+    {
+        path: 'edit/:id',
+        component: BookEditComponent,
     }
 ]
 

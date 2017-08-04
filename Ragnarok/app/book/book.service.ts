@@ -6,6 +6,7 @@ import { Book } from './book';
 
 @Injectable()
 export class BookService {
+    private headers = new Headers({ 'Content-Type': 'application/json' });
     private url = 'api/Book';
     constructor(private http: Http) { }
 
@@ -22,6 +23,12 @@ export class BookService {
             .map(this.extractData)
             .catch(this.extractData);
     } 
+
+    editBook(book: Book): Observable<Book[]> { 
+        return this.http.post(`${this.url}/EditBook/${book.Id}`, book)
+            .map(this.extractData)
+            .catch(this.handleError);
+    }
     
     extractData(res: Response) {
         return res.json() || [];

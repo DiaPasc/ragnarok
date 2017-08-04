@@ -36,16 +36,31 @@ namespace Ragnarok.Controllers.Api
         [HttpGet]
         public IHttpActionResult GetBook(Guid id)
         {
-            Ragnarok.DA.Book.Entity.Book book = unitOfWork.BookRepository.List().FirstOrDefault(a => a.Id == id);
+            Ragnarok.DA.Book.Entity.Book book = unitOfWork.BookRepository.GetById(id);
+            return Ok(new Book
+            {
+                Id = book.Id,
+                Title = book.Title,
+                Author = book.Author,
+                Year = book.Year,
+                Description = book.Description
+            });
+        }
 
-            if (book != null)
-                return Ok(new Book
-                {
-                    Title = book.Title,
-                    Author = book.Author,
-                    Year = book.Year,
-                    Description = book.Description
-                });
+        [HttpPost]
+        public IHttpActionResult EditBook(Book book)
+        {
+            unitOfWork.BookRepository.Update(new DA.Book.Entity.Book
+            {
+                Id = book.Id,
+                Title = book.Title,
+                Author = book.Author,
+                Year = book.Year,
+                Description = book.Description
+            });
+
+            unitOfWork.Save();
+
             return Ok();
         }
     }
