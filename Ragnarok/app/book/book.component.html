@@ -5,8 +5,8 @@
             <th>Author</th>
             <th>Year</th>
             <th>Description</th>
+            <th>Actions</th>
         </tr>
-
         <tr *ngFor="let book of books">
             <td>{{book.Title}}</td>
             <td>{{book.Author}}</td>
@@ -15,7 +15,8 @@
             <td>
                 <a [routerLink]="['/detail', book.Id]">Detail</a>
                 <a [routerLink]="['/edit', book.Id]">Edit</a>
-            </td>
+                <button (click)="deleteBook(book.Id)">x</button>           
         </tr>
     </table>
 </div>
+

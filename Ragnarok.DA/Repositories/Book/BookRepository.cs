@@ -28,7 +28,14 @@ namespace Ragnarok.DA.Repositories
 
             dbBook.Title = book.Title;
             dbBook.Author = book.Author;
-            // ..
+            dbBook.Year = book.Year;
+            dbBook.Description = book.Description;
+        }
+
+        public void Delete(Guid id)
+        {
+            Book.Entity.Book book = dbSet.SingleOrDefault(x => x.Id == id);
+            dbSet.Remove(book);
         }
     }
 }

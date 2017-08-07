@@ -8,6 +8,7 @@ import { Book } from './book';
 export class BookService {
     private headers = new Headers({ 'Content-Type': 'application/json' });
     private url = 'api/Book';
+
     constructor(private http: Http) { }
 
     getData(): Observable<Book[]> {
@@ -29,7 +30,15 @@ export class BookService {
             .map(this.extractData)
             .catch(this.handleError);
     }
-    
+
+    deleteBook(id: string): Observable<any> {
+        let params = new URLSearchParams();
+        params.set('id', id);
+        return this.http.delete(`${this.url}/DeleteBook`, { search: params })
+            .map(this.extractData)
+            .catch(this.handleError);
+    }
+
     extractData(res: Response) {
         return res.json() || [];
     }

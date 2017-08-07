@@ -63,5 +63,13 @@ namespace Ragnarok.Controllers.Api
 
             return Ok();
         }
+
+        [HttpDelete]
+        public IHttpActionResult DeleteBook(Guid id)
+        {
+            unitOfWork.BookRepository.Delete(id);
+            unitOfWork.Save();
+            return Ok();
+        }
     }
 }

@@ -7,5 +7,6 @@ namespace Ragnarok.DA.Repositories
         Book.Entity.Book[] List();
         Book.Entity.Book GetById(Guid id);
         void Update(Book.Entity.Book book);
+        void Delete(Guid id);
     }
 }

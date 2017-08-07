@@ -18,6 +18,9 @@ var BookComponent = (function () {
         this.router = router;
         this.books = [];
     }
+    BookComponent.prototype.ngOnInit = function () {
+        this.getBooks();
+    };
     BookComponent.prototype.getBooks = function () {
         var _this = this;
         var obs = this.bookService.getData().subscribe(function (books) {
@@ -25,8 +28,14 @@ var BookComponent = (function () {
             obs.unsubscribe();
         });
     };
-    BookComponent.prototype.ngOnInit = function () {
-        this.getBooks();
+    BookComponent.prototype.deleteBook = function (id) {
+        var _this = this;
+        if (confirm("Do you want to delete this book?")) {
+            var sub_1 = this.bookService.deleteBook(id).subscribe(function (data) {
+                _this.getBooks();
+                sub_1.unsubscribe();
+            });
+        }
     };
     return BookComponent;
 }());

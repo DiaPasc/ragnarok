@@ -31,14 +31,34 @@ var BookService = (function () {
             .catch(this.extractData);
     };
     BookService.prototype.editBook = function (book) {
-        var bodyString = JSON.stringify(book);
         return this.http.post(this.url + "/EditBook/" + book.Id, book)
             .map(this.extractData)
             .catch(this.handleError);
     };
+    BookService.prototype.deleteBook = function (id) {
+        var params = new http_1.URLSearchParams();
+        params.set('id', id);
+        return this.http.delete(this.url + "/DeleteBook", { search: params })
+            .map(this.handleError);
+    };
     BookService.prototype.extractData = function (res) {
         return res.json() || [];
     };
+    //extractData(res: Response) {
+    //    let body = res.json();
+    //    return body.data || { };
+    //}
+    //extractData(res: Response) {
+    //    let body = res.json();
+    //    return body ? res.json() : {};
+    //}
+    //extractData(res: Response) {
+    //    if (res.status < 200 || res.status >= 300) {
+    //        throw new Error('Bad response status: ' + res.status);
+    //    }
+    //    let body = res.json();
+    //    return body.data || {};
+    //}
     BookService.prototype.handleError = function (error) {
         var errMsg;
         if (error instanceof http_1.Response) {
